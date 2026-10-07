@@ -1,14 +1,14 @@
 <script setup>
 import { ref } from 'vue'
 import axios from 'axios'
-// import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 
 const email = ref('')
 const password = ref('')
 const mostrarPassword = ref(false)
 const errorMsg = ref('')
 const cargando = ref(false)
-// const router = useRouter()
+const router = useRouter()
 
 const handleLogin = async () => {
   errorMsg.value = ''
@@ -20,13 +20,11 @@ const handleLogin = async () => {
       password: password.value
     })
     
-    // Guardar el token en el almacenamiento local del navegador
     localStorage.setItem('barber_token', respuesta.data.token)
     localStorage.setItem('barber_user', JSON.stringify(respuesta.data.usuario))
     
-    // Aquí redirigiremos al dashboard (lo activaremos en el siguiente módulo)
-    alert('¡Login exitoso! Token guardado.')
-    // router.push('/dashboard')
+    // Redirección activada
+    router.push('/dashboard')
     
   } catch (error) {
     if (error.response && error.response.data.error) {
