@@ -1,15 +1,16 @@
 const express = require('express');
 const cors = require('cors');
+const barberiasRoutes = require('./routes/barberias.routes');
 
 const app = express();
 
-// Middlewares globales
 app.use(cors());
-app.use(express.json()); // Permite recibir datos en formato JSON en el req.body
+app.use(express.json());
 
-// Ruta de prueba básica
 app.get('/api/ping', (req, res) => {
-    res.json({ mensaje: '¡El backend de la barbería está vivo! 💈' });
+    res.json({ message: 'Sistema inicializado correctamente. Status: OK' });
 });
+
+app.use('/api/barberias', barberiasRoutes);
 
 module.exports = app;
