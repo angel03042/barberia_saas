@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const barberiasRoutes = require('./routes/barberias.routes');
+const usuariosRoutes = require('./routes/usuarios.routes');
 
 const app = express();
 
@@ -12,5 +13,6 @@ app.get('/api/ping', (req, res) => {
 });
 
 app.use('/api/barberias', barberiasRoutes);
+app.use('/api/usuarios', usuariosRoutes);
 
 module.exports = app;
