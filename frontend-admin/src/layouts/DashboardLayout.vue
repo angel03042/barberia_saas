@@ -7,10 +7,10 @@ const usuario = ref(null)
 const mostrarDropdown = ref(false) // Nueva variable para controlar el menú
 
 const menu = [
-  { nombre: 'Overview', activo: false },
-  { nombre: 'Barberías', activo: true },
-  { nombre: 'Servicios', activo: false },
-  { nombre: 'Citas', activo: false }
+  { nombre: 'Overview', ruta: '/dashboard/overview' },
+  { nombre: 'Barberías', ruta: '/dashboard' },
+  { nombre: 'Servicios', ruta: '/dashboard/servicios' },
+  { nombre: 'Citas', ruta: '/dashboard/citas' }
 ]
 
 onMounted(() => {
@@ -43,17 +43,17 @@ const cerrarSesion = () => {
         </div>
       </div>
 
+      <!-- Menú Central (Píldora Oscura) -->
       <div class="hidden md:flex bg-[#1c1c24] rounded-full p-1 items-center gap-1">
-        <button 
+        <router-link 
           v-for="item in menu" 
           :key="item.nombre"
-          :class="[
-            item.activo ? 'bg-indigo-500 text-white shadow-md' : 'text-slate-300 hover:text-white hover:bg-slate-800',
-            'px-5 py-2 rounded-full text-sm font-medium transition-all'
-          ]"
+          :to="item.ruta"
+          exact-active-class="bg-indigo-500 text-white shadow-md"
+          class="text-slate-300 hover:text-white hover:bg-slate-800 px-5 py-2 rounded-full text-sm font-medium transition-all"
         >
           {{ item.nombre }}
-        </button>
+        </router-link>
       </div>
 
       <div class="flex items-center gap-4">

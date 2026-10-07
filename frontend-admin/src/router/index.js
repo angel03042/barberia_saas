@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/LoginView.vue'
 import DashboardLayout from '../layouts/DashboardLayout.vue'
 import DashboardView from '../views/DashboardView.vue'
+import ServiciosView from '../views/ServiciosView.vue'
 
 const routes = [
   { path: '/', redirect: '/login' },
@@ -11,7 +12,8 @@ const routes = [
     component: DashboardLayout,
     meta: { requiresAuth: true },
     children: [
-      { path: '', name: 'dashboard', component: DashboardView }
+      { path: '', name: 'dashboard', component: DashboardView },
+      { path: 'servicios', name: 'servicios', component: ServiciosView }
     ]
   }
 ]
