@@ -3,6 +3,7 @@ import LoginView from '../views/LoginView.vue'
 import DashboardLayout from '../layouts/DashboardLayout.vue'
 import DashboardView from '../views/DashboardView.vue'
 import ServiciosView from '../views/ServiciosView.vue'
+import CitasView from '../views/CitasView.vue'
 
 const routes = [
   { path: '/', redirect: '/login' },
@@ -13,7 +14,8 @@ const routes = [
     meta: { requiresAuth: true },
     children: [
       { path: '', name: 'dashboard', component: DashboardView },
-      { path: 'servicios', name: 'servicios', component: ServiciosView }
+      { path: 'servicios', name: 'servicios', component: ServiciosView },
+      { path: 'citas', name: 'citas', component: CitasView }
     ]
   }
 ]
