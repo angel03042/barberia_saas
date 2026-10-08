@@ -14,7 +14,6 @@ router.post(
 // GET: Cualquier usuario logueado en el sistema puede ver las barberías
 router.get(
     '/', 
-    verificarToken, 
     barberiasController.getBarberias
 );
 
