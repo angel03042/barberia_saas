@@ -81,11 +81,11 @@ const barberiasFiltradas = computed(() => {
 
       <div v-else class="flex flex-col gap-4">
         <!-- Tarjeta de Barbería -->
-        <div 
+        <router-link 
           v-for="barberia in barberiasFiltradas" 
           :key="barberia.id"
-          class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow flex items-center gap-4 cursor-pointer"
-        >
+          :to="`/barberia/${barberia.id}`"
+          class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow flex items-center gap-4 cursor-pointer">
           <!-- Logo dinámico -->
           <div class="w-16 h-16 rounded-xl shrink-0 overflow-hidden bg-indigo-50 border border-indigo-100 flex items-center justify-center">
             <img :src="`https://ui-avatars.com/api/?name=${barberia.nombre}&background=4f46e5&color=ffffff&size=100`" class="w-full h-full object-cover" alt="Logo">
@@ -109,7 +109,7 @@ const barberiasFiltradas = computed(() => {
               Ver servicios y reservar
             </button>
           </div>
-        </div>
+        </router-link>
       </div>
     </section>
 
