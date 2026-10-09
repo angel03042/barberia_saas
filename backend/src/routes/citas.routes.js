@@ -4,7 +4,7 @@ const citasController = require('../controllers/citas.controller');
 const { verificarToken } = require('../middlewares/auth.middleware');
 
 // POST: Cualquier usuario logueado puede crear una cita
-router.post('/', verificarToken, citasController.createCita);
+router.post('/', citasController.createCita);
 
 // GET: Ver la agenda de una barbería
 router.get('/:barberia_id', verificarToken, citasController.getCitasPorBarberia);

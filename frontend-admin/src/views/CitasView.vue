@@ -129,8 +129,8 @@ const colorEstado = (estado) => {
               <!-- Cliente -->
               <td class="py-4 px-4">
                 <div class="flex items-center gap-3">
-                  <img :src="`https://ui-avatars.com/api/?name=${cita.cliente}&background=e2e8f0&color=475569`" class="w-8 h-8 rounded-full shadow-sm" alt="Avatar">
-                  <span class="text-sm font-bold text-slate-800">{{ cita.cliente }}</span>
+                  <img :src="`https://ui-avatars.com/api/?name=${cita.cliente_nombre || 'Cliente'}&background=e2e8f0&color=475569`" class="w-8 h-8 rounded-full shadow-sm" alt="Avatar">
+                  <span class="text-sm font-bold text-slate-800">{{ cita.cliente_nombre || 'Cliente Web' }}</span>
                 </div>
               </td>
               
