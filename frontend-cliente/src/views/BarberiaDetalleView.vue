@@ -59,9 +59,9 @@ onMounted(async () => {
           
           <div class="flex flex-col items-end gap-2">
             <span class="font-black text-indigo-600 text-lg">${{ servicio.precio }}</span>
-            <button class="bg-indigo-50 text-indigo-700 hover:bg-indigo-600 hover:text-white px-4 py-1.5 rounded-lg text-xs font-bold transition-colors">
+            <router-link :to="`/reserva/${servicio.id}`" class="bg-indigo-50 text-indigo-700 hover:bg-indigo-600 hover:text-white px-4 py-1.5 rounded-lg text-xs font-bold transition-colors text-center">
               Elegir
-            </button>
+            </router-link>
           </div>
         </div>
       </div>
